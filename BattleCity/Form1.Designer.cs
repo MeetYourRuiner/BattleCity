@@ -40,14 +40,15 @@
             this.picBox.Location = new System.Drawing.Point(0, 0);
             this.picBox.Name = "picBox";
             this.picBox.Size = new System.Drawing.Size(800, 450);
+            this.picBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.picBox.TabIndex = 0;
             this.picBox.TabStop = false;
             this.picBox.Paint += new System.Windows.Forms.PaintEventHandler(this.picBox_Paint);
             // 
             // timer1
             // 
+            this.timer1.Interval = 41;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            this.timer1.Interval = Config.Tickrate;
             // 
             // Form1
             // 
@@ -59,8 +60,10 @@
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyUp);
             ((System.ComponentModel.ISupportInitialize)(this.picBox)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 

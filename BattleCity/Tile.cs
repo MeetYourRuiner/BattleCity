@@ -22,12 +22,19 @@ namespace BattleCity
     {
         public Rectangle Rect { get; set; }
         public bool isWall { get; set; }
-        public int Wall_Durability { get; set; }
+        public int Wall_HP { get; set; }
 
         public Tile(int _isWall, int i, int j)
         {
             isWall = (_isWall == 1);
+            if (isWall) Wall_HP = 4;
             Rect = new Rectangle(Config.TileSize * j, Config.TileSize * i, Config.TileSize, Config.TileSize);
+        }
+
+        public void Tick()
+        {
+            if (isWall && Wall_HP == 0)
+                isWall = false;
         }
     }
 }
